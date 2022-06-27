@@ -30,6 +30,8 @@ canvas.addEventListener("mousemove", (e) => {
     const x2 = e.offsetX;
     const y2 = e.offsetY;
     drawLine(x, y, x2, y2);
+    x = x2;
+    y = y2;
     }
 });
 
