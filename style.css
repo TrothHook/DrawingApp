@@ -11,10 +11,61 @@ body{
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: "Poppins", sans-serif;
 }
 
 canvas{
     border: 1px solid #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.toolbox{
+    width: 602px;
+    background-color: rgba(102, 51, 153, 0.596);
+    padding: 1rem;
+    color: floralwhite;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+}
+
+.btn{
+    padding: 0.5rem 1.1rem;
+    text-align: center;
+    background-color: rebeccapurple;
+    border: 1px solid floralwhite;
+    color: aliceblue;
+    font-weight: 900;
+    font-size: 1.2rem;
+    transition: background-color 0.2s;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+    width: 50px;
+    height: 50px;
+    
+}
+
+.btn:hover{
+    background-color: transparent;
+    color: floralwhite;
+}
+
+.btn:active{
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.radius-value{
+    padding: 0.5rem 1.1rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+    width: 50px;
+    height: 50px;
+}
+
+.toolbox > *{
+    display: inline-flex;
+    margin: 0.5rem;
 }

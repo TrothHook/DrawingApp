@@ -1,8 +1,13 @@
 const canvas = document.getElementById("canvas");
+const increaseBtn = document.getElementById("increase");
+const decreaseBtn = document.getElementById("decrease");
+const radiusValue = document.querySelector(".radius-value");
+const colorEl = document.getElementById("color");
 const ctx = canvas.getContext("2d");
 
-let radius = 30;
+let radius = 15;
 let isPressed = false;
+let color = "grey";
 
 canvas.addEventListener("mousedown", ()=>{
    isPressed = true;
@@ -23,7 +28,32 @@ canvas.addEventListener("mousemove", (e) => {
 function drawCircle(x, y){
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, 2 * Math.PI)
+    ctx.fillStyle = color;
     ctx.fill();
+}
+
+increaseBtn.addEventListener("click", () => {
+    radius += 5;
+
+    if(radius > 30){
+        radius = 30;
+    }
+    updateSizeOnScreen();
+});
+decreaseBtn.addEventListener("click", () => {
+    radius -= 5;
+    if(radius < 5){
+        radius = 5;
+    }
+    updateSizeOnScreen();
+});
+
+colorEl.addEventListener("change", (e) =>{
+    color = e.target.value;
+});
+
+function updateSizeOnScreen(){
+    radiusValue.textContent = radius;
 }
 
 
